@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>THE KING PHONE</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Cairo', sans-serif;
+    background: linear-gradient(135deg, #0a1d4d, #0f3c91);
+    color: #fff;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 40px 20px;
+    background: #081a3a;
+}
+
+header h1 {
+    font-size: 42px;
+    color: #f9c74f;
+    margin: 0;
+}
+
+header p {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #ddd;
+}
+
+/* Sections */
+.section {
+    padding: 40px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: #f9c74f;
+}
+
+/* Services Grid */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.service {
+    background: rgba(255,255,255,0.1);
+    padding: 25px 20px;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.service:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-5px);
+}
+
+.service i {
+    font-size: 40px;
+    color: #f9c74f;
+    margin-bottom: 15px;
+}
+
+.service h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+/* WhatsApp Button */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: #25D366;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 18px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.whatsapp:hover {
+    background: #1ebe5d;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #081a3a;
+    font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>THE KING PHONE</h1>
+    <p>لخدمات الدفع الإلكتروني وشحن الألعاب والتطبيقات</p>
+</header>
+
+<!-- Section 1 -->
+<section class="section">
+    <h2>🎮 خدمات شحن الألعاب والتطبيقات</h2>
+    <div class="services">
+        <div class="service"><i class="fas fa-fire"></i><h3>شحن فري فاير</h3></div>
+        <div class="service"><i class="fas fa-crosshairs"></i><h3>شحن ببجي</h3></div>
+        <div class="service"><i class="fas fa-desktop"></i><h3>بلوستاك</h3></div>
+        <div class="service"><i class="fas fa-gamepad"></i><h3>جواكر</h3></div>
+        <div class="service"><i class="fab fa-netflix"></i><h3>اشتراك نتفلكس</h3></div>
+        <div class="service"><i class="fas fa-tv"></i><h3>اشتراك شاهد VIP</h3></div>
+        <div class="service"><i class="fas fa-video"></i><h3>تطبيقات مونتاج برو</h3></div>
+        <div class="service"><i class="fas fa-mobile-screen-button"></i><h3>الشحن داخل التطبيقات</h3></div>
+    </div>
+</section>
+
+<!-- Section 2 -->
+<section class="section">
+    <h2>💳 الخدمات المالية</h2>
+    <div class="services">
+        <div class="service"><i class="fas fa-sim-card"></i><h3>شحن رصيد Syriatel</h3></div>
+        <div class="service"><i class="fas fa-signal"></i><h3>شحن رصيد MTN</h3></div>
+        <div class="service"><i class="fas fa-wallet"></i><h3>Syriatel Cash</h3></div>
+        <div class="service"><i class="fas fa-money-bill-wave"></i><h3>MTN Cash</h3></div>
+        <div class="service"><i class="fab fa-google-play"></i><h3>بطاقات جوجل بلاي</h3></div>
+        <div class="service"><i class="fab fa-cc-visa"></i><h3>بطاقات فيزا قابلة لإعادة التعبئة</h3></div>
+    </div>
+</section>
+
+<!-- WhatsApp -->
+<a class="whatsapp" href="https://wa.me/963943438959" target="_blank">
+<i class="fab fa-whatsapp"></i> واتساب
+</a>
+
+<footer>
+    جميع الحقوق محفوظة © THE KING PHONE
+</footer>
+
+</body>
+</html>
