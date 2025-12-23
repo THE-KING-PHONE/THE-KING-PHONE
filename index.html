@@ -5,7 +5,10 @@
 <title>THE KING PHONE</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Font Awesome Icons -->
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
@@ -16,7 +19,6 @@ body {
     color: #fff;
 }
 
-/* Header */
 header {
     text-align: center;
     padding: 40px 20px;
@@ -31,11 +33,9 @@ header h1 {
 
 header p {
     font-size: 18px;
-    margin-top: 10px;
     color: #ddd;
 }
 
-/* Sections */
 .section {
     padding: 40px 20px;
     max-width: 1100px;
@@ -49,7 +49,6 @@ header p {
     color: #f9c74f;
 }
 
-/* Services Grid */
 .services {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -61,6 +60,7 @@ header p {
     padding: 25px 20px;
     border-radius: 15px;
     text-align: center;
+    cursor: pointer;
     transition: 0.3s;
 }
 
@@ -75,11 +75,6 @@ header p {
     margin-bottom: 15px;
 }
 
-.service h3 {
-    margin: 0;
-    font-size: 18px;
-}
-
 /* WhatsApp Button */
 .whatsapp {
     position: fixed;
@@ -91,19 +86,56 @@ header p {
     border-radius: 50px;
     text-decoration: none;
     font-size: 18px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-.whatsapp:hover {
-    background: #1ebe5d;
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
 }
 
-/* Footer */
+.modal-content {
+    background: #081a3a;
+    margin: 10% auto;
+    padding: 25px;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.close {
+    font-size: 28px;
+    cursor: pointer;
+    float: right;
+    color: #f9c74f;
+}
+
+.offers button {
+    width: 100%;
+    margin: 10px 0;
+    padding: 15px;
+    font-size: 16px;
+    background: #f9c74f;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.offers button:hover {
+    background: #ffd166;
+}
+
 footer {
     text-align: center;
     padding: 20px;
     background: #081a3a;
-    font-size: 14px;
 }
 </style>
 </head>
@@ -112,45 +144,93 @@ footer {
 
 <header>
     <h1>THE KING PHONE</h1>
-    <p>لخدمات الدفع الإلكتروني وشحن الألعاب والتطبيقات</p>
+    <p>لخدمات شحن الألعاب والاشتراكات والخدمات المالية</p>
 </header>
 
-<!-- Section 1 -->
 <section class="section">
-    <h2>🎮 خدمات شحن الألعاب والتطبيقات</h2>
-    <div class="services">
-        <div class="service"><i class="fas fa-fire"></i><h3>شحن فري فاير</h3></div>
-        <div class="service"><i class="fas fa-crosshairs"></i><h3>شحن ببجي</h3></div>
-        <div class="service"><i class="fas fa-desktop"></i><h3>بلوستاك</h3></div>
-        <div class="service"><i class="fas fa-gamepad"></i><h3>جواكر</h3></div>
-        <div class="service"><i class="fab fa-netflix"></i><h3>اشتراك نتفلكس</h3></div>
-        <div class="service"><i class="fas fa-tv"></i><h3>اشتراك شاهد VIP</h3></div>
-        <div class="service"><i class="fas fa-video"></i><h3>تطبيقات مونتاج برو</h3></div>
-        <div class="service"><i class="fas fa-mobile-screen-button"></i><h3>الشحن داخل التطبيقات</h3></div>
-    </div>
+<h2>🎮 خدمات الألعاب والاشتراكات</h2>
+<div class="services">
+    <div class="service" onclick="freefire()"><i class="fas fa-fire"></i><h3>فري فاير</h3></div>
+    <div class="service" onclick="pubg()"><i class="fas fa-crosshairs"></i><h3>ببجي</h3></div>
+    <div class="service" onclick="netflix()"><i class="fab fa-netflix"></i><h3>نتفلكس</h3></div>
+</div>
 </section>
 
-<!-- Section 2 -->
 <section class="section">
-    <h2>💳 الخدمات المالية</h2>
-    <div class="services">
-        <div class="service"><i class="fas fa-sim-card"></i><h3>شحن رصيد Syriatel</h3></div>
-        <div class="service"><i class="fas fa-signal"></i><h3>شحن رصيد MTN</h3></div>
-        <div class="service"><i class="fas fa-wallet"></i><h3>Syriatel Cash</h3></div>
-        <div class="service"><i class="fas fa-money-bill-wave"></i><h3>MTN Cash</h3></div>
-        <div class="service"><i class="fab fa-google-play"></i><h3>بطاقات جوجل بلاي</h3></div>
-        <div class="service"><i class="fab fa-cc-visa"></i><h3>بطاقات فيزا قابلة لإعادة التعبئة</h3></div>
-    </div>
+<h2>💳 الخدمات المالية</h2>
+<div class="services">
+    <div class="service" onclick="mtn()"><i class="fas fa-signal"></i><h3>رصيد MTN</h3></div>
+    <div class="service" onclick="syriatel()"><i class="fas fa-sim-card"></i><h3>رصيد Syriatel</h3></div>
+</div>
 </section>
 
-<!-- WhatsApp -->
+<!-- Modal -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">×</span>
+    <h2 id="title"></h2>
+    <div id="offers" class="offers"></div>
+  </div>
+</div>
+
 <a class="whatsapp" href="https://wa.me/963943438959" target="_blank">
 <i class="fab fa-whatsapp"></i> واتساب
 </a>
 
 <footer>
-    جميع الحقوق محفوظة © THE KING PHONE
+جميع الحقوق محفوظة © THE KING PHONE
 </footer>
+
+<script>
+const phone = "963943438959";
+
+function openModal(title, content) {
+    document.getElementById("title").innerText = title;
+    document.getElementById("offers").innerHTML = content;
+    document.getElementById("modal").style.display = "block";
+}
+
+function closeModal() {
+    document.getElementById("modal").style.display = "none";
+}
+
+function order(text) {
+    const msg = encodeURIComponent("مرحبًا، أريد " + text);
+    window.open(`https://wa.me/${phone}?text=${msg}`, "_blank");
+}
+
+function freefire() {
+openModal("🔥 عروض فري فاير", `
+<button onclick="order('375 جوهرة فري فاير - 2 دولار')">375 جوهرة – 2$</button>
+<button onclick="order('575 جوهرة فري فاير - 4 دولار')">575 جوهرة – 4$</button>
+`);
+}
+
+function pubg() {
+openModal("🎯 عروض ببجي", `
+<button onclick="order('325 شدة ببجي - 5 دولار')">325 شدة – 5$</button>
+`);
+}
+
+function netflix() {
+openModal("🎬 اشتراكات نتفلكس", `
+<button onclick="order('اشتراك نتفلكس شهري - 15 دولار')">شهري – 15$</button>
+<button onclick="order('اشتراك نتفلكس 3 أشهر - 40 دولار')">3 أشهر – 40$</button>
+`);
+}
+
+function mtn() {
+openModal("📶 رصيد MTN", `
+<button onclick="order('24000 رصيد MTN - 3 دولار')">24000 – 3$</button>
+`);
+}
+
+function syriatel() {
+openModal("📱 رصيد Syriatel", `
+<button onclick="order('24000 رصيد Syriatel - 3 دولار')">24000 – 3$</button>
+`);
+}
+</script>
 
 </body>
 </html>
